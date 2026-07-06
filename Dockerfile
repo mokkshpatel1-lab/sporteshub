@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -27,7 +27,7 @@ RUN apk add --no-cache dumb-init
 COPY package*.json ./
 
 # Install production dependencies only
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # Copy built app from builder
 COPY --from=builder /app/.next ./.next
