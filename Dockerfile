@@ -39,5 +39,5 @@ EXPOSE 3000
 # Use dumb-init to handle signals
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the app
-CMD ["npm", "start"]
+# Start the app using standalone server
+CMD ["node", ".next/standalone/server.js"]
